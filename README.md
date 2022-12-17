@@ -10,7 +10,7 @@
 
 ## 🛠 Stack utilizada até o momento
 
-**Front-end:** HTML, CSS, Bootstrap
+**Front-end:** HTML, CSS, JavaScript, Bootstrap
 
 **Back-end:**
 
