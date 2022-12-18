@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="../css/query-home.css">
 </head>
 
-<body>
-    <div class="container-lg">
+<body onLoad="openPage('services', 'conteudo')">
+    <div class="container-md">
         <div class="row">
             <aside class="col-lg-4 user">
                 <div class="welcome">
@@ -28,43 +28,7 @@
                     <p>Bem vindo de volta, Alexandre!</p>
                 </div>
             </aside>
-
-            <nav class="col-lg-8 services" id="conteudo">
-                <a onclick="openPage('venda', 'conteudo')">
-                    <div class="button-service"><i class="bi bi-bag icon"></i></div>
-                    <p>Venda</p>
-                </a>
-
-                <a onclick="openPage('cobranca', 'conteudo')">
-                    <div class="button-service"><i class="bi bi-currency-dollar icon"></i> </div>
-                    <p>Cobrança</p>
-                </a>
-
-                <a onclick="openPage('clientes', 'conteudo')">
-                    <div class="button-service"><i class="bi bi-people icon"></i></div>
-                    <p>Clientes</p>
-                </a>
-                <a onclick="openPage('faturamento', 'conteudo')">
-                    <div class="button-service"><i class="bi bi-clipboard2-data icon"></i></div>
-                    <p>Faturamento</p>
-                </a>
-                <a class="disable">
-                    <div class="button-service"><i class="bi bi-shop-window icon"></i></div>
-                    <p>Produtos</p>
-                </a>
-                <a class="disable">
-                    <div class="button-service"><i class="bi bi-archive icon"></i></div>
-                    <p>Histórico</p>
-                </a>
-                <a class="disable">
-                    <div class="button-service"><i class="bi bi-calendar-event icon"></i></div>
-                    <p>Calendário</p>
-                </a>
-                <a class="disable">
-                    <div class="button-service"><i class="bi bi-gear icon"></i></div>
-                    <p>Ajustes</p>
-                </a>
-            </nav>
+            <nav class="col-lg-8 services" id="conteudo"></nav>
         </div>
     </div>
 </body>

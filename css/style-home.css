@@ -82,8 +82,8 @@ body {
 .icon {
     font-size: 580%;
     color: #fff;
-    -webkit-text-stroke: 1.5px #000;
-    line-height: 140px;
+    -webkit-text-stroke: 1.3px #000;
+    line-height: 145px;
 }
 
 .services p {
@@ -105,19 +105,29 @@ a:hover p {
     bottom: 5px;
     cursor: pointer;
     text-shadow: 6.4px 12.8px 12.8px hsl(0deg 0% 0% / 0.50);
+    -webkit-text-stroke: .5px #000;
+
+}
+
+a:hover .icon {
+    -webkit-text-stroke: 1.8px #000;
 }
 
 .disable .button-service {
     background-color: var(--btn-disable);
 }
 
-.disable i {
+.disable .icon {
     color: rgba(253, 253, 253, 0.245);
-    -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.649);
+    -webkit-text-stroke: 1.3px rgba(0, 0, 0, 0.649);
 }
 
 .disable p {
     color: #9a9898;
+}
+
+.disable:hover .icon {
+    -webkit-text-stroke: 1.3px rgba(0, 0, 0, 0.649);
 }
 
 .disable:hover .button-service {
@@ -131,6 +141,7 @@ a:hover p {
     position: initial;
     cursor: not-allowed;
     text-shadow: initial;
+    -webkit-text-stroke: unset;
 
 }
 
