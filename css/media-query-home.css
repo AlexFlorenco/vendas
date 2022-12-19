@@ -1,0 +1,25 @@
+@media screen and (max-width: 991px) {
+    .button-service {
+        width: 125.5px;
+        height: 120px;
+        max-width: 125.5px;
+        max-height: 120px;
+    }
+
+    .icon {
+        font-size: 500%;
+        color: #fff;
+        -webkit-text-stroke: 1.2px #000;
+        line-height: 125px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .row {
+        margin-top: 0;
+    }
+
+    .services {
+        height: 100%;
+    }
+}
