@@ -12,5 +12,5 @@
 
 **Front-end:** HTML, CSS, JavaScript, Bootstrap
 
-**Back-end:**
+**Back-end:** Python
 
