@@ -1,0 +1,93 @@
+:root {
+    --primary-color: #dfdfdf;
+    --btn-hover: #ebebeb;
+    --btn-disable: #bbb9b9e5;
+}
+
+.service {
+    transition: transform .3s linear;
+    text-decoration: none;
+}
+
+.service .button-service {
+    width: 150.5px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0 20px 8px 20px;
+    border: 1px solid #9292926b;
+    text-align: center;
+    background-color: var(--primary-color);
+    box-shadow: 2.5px 5.0px 5.0px hsl(0deg 0% 0% / 0.42);
+    transition: transform .3s linear, box-shadow .3s linear;
+}
+
+.button-service .icon {
+    font-size: 580%;
+    color: #fff;
+    -webkit-text-stroke: 1.3px #000;
+    line-height: 145px;
+}
+
+.service p {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    text-shadow: 1px 1px 1.0px hsl(0deg 0% 0% / 0.42);
+    transition: transform .3s linear, text-shadow .3s linear;
+    color: #000;
+}
+
+.service:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.service:hover .button-service {
+    background-color: var(--btn-hover);
+    box-shadow: 6.4px 12.8px 12.8px hsl(0deg 0% 0% / 0.30);
+}
+
+.service:hover .icon {
+    -webkit-text-stroke: 1.8px #000;
+}
+
+.service:hover p {
+    -webkit-text-stroke: .5px #000;
+    text-shadow: 6.4px 10px 8px hsl(0deg 0% 0% / .5);
+}
+
+.disable {
+    cursor: not-allowed !important;
+    text-decoration: none;
+}
+
+.disable .button-service {
+    background-color: var(--btn-disable);
+}
+
+.disable .icon {
+    color: rgba(253, 253, 253, 0.245);
+    -webkit-text-stroke: 1.3px rgba(0, 0, 0, 0.649);
+}
+
+.disable p {
+    color: #9a9898;
+}
+
+.disable:hover {
+    transform: translateY(0);
+}
+
+.disable:hover .button-service {
+    background-color: var(--btn-disable);
+    box-shadow: 2.5px 5.0px 5.0px hsl(0deg 0% 0% / 0.42);
+}
+
+.disable:hover .icon {
+    -webkit-text-stroke: 1.3px rgba(0, 0, 0, 0.649);
+}
+
+.disable:hover p {
+    -webkit-text-stroke: unset;
+    text-shadow: 1px 1px 1.0px hsl(0deg 0% 0% / 0.42);
+}
