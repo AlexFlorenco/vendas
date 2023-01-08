@@ -1,7 +1,5 @@
 from app.produto import Produto
-from cliente import Cliente
-from cliente import Compra
-from cliente import Pagamento
+from app.cliente import Cliente, Compra, Pagamento
 from datetime import date
 
 
