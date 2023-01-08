@@ -10,6 +10,7 @@ def criar_cliente_csv():
     if os.path.exists("armazem/clientes.csv"):
         return criar_compra_csv()
     df = pd.DataFrame(columns=['nome', 'contato', 'total_comprado', 'total_pago'])
+    df.index.name = 'id_cliente'
     df.to_csv("armazem/clientes.csv")
     criar_compra_csv()
 
@@ -19,6 +20,7 @@ def criar_compra_csv():
         return criar_pagamento_csv()
     df = pd.DataFrame(columns=['id_cliente', 'nome_produto', 'valor_produto', 'descricao_produto',
                                'data', 'is_debito_imediato'])
+    df.index.name = 'id_compra'
     df.to_csv("armazem/compras.csv")
     criar_pagamento_csv()
 
@@ -27,23 +29,26 @@ def criar_pagamento_csv():
     if os.path.exists("armazem/pagamentos.csv"):
         return
     df = pd.DataFrame(columns=['id_cliente', 'valor', 'data'])
+    df.index.name = 'id_pagamento'
     df.to_csv("armazem/pagamentos.csv")
 
 
 def inserir_row_cliente(cliente):
     criar_cliente_csv()
-    df_cliente = pd.read_csv('armazem/compras.csv')
-    print(df_cliente.columns)
+    df_cliente = pd.read_csv('armazem/clientes.csv')
+    id_cliente = len(df_cliente)
     new_row = pd.DataFrame({'nome': cliente.nome, 'contato': cliente.contato,
                             'total_comprado': cliente.total_comprado,
-                            'total_pago': cliente.total_pago}, index=[0])
+                            'total_pago': cliente.total_pago}, index=[id_cliente])
     # simply concatenate both dataframes
-    df_cliente = pd.concat([df_cliente, new_row]).reset_index(drop=True)
-    # df_cliente = df_cliente.dropna(axis=1)
+    df_cliente = pd.concat([df_cliente, new_row])#.reset_index(drop=True)
+    df_cliente.dropna(axis=1, inplace=True)
+    df_cliente.index.name = 'id_cliente'
+
     # save to csv
     df_cliente.to_csv("armazem/clientes.csv")
+
     # calls inserir compras
-    id_cliente = df_cliente[df_cliente['nome'] == cliente.nome].index
     inserir_rows_compra(cliente.compras, id_cliente)
 
     # calls inserir pagamentos
@@ -59,7 +64,8 @@ def inserir_rows_compra(compras, id_cliente):
                                 'descricao_produto': comp.produto.descricao, 'data': comp.data,
                                 'is_debito_imediato': comp.is_debito_imediato}, index=[0])
         df_compra = pd.concat([df_compra, new_row]).reset_index(drop=True)
-    df_compra.dropna(axis=1)
+    df_compra.dropna(axis=1, inplace=True)
+    df_compra.index.name = 'id_compra'
     df_compra.to_csv("armazem/compras.csv")
 
     return df_compra
@@ -71,7 +77,8 @@ def inserir_rows_pagamento(pagamentos, id_cliente):
         new_row = pd.DataFrame({'id_cliente': id_cliente, 'valor': pag.valor,
                                 'data': pag.data}, index=[0])
         df_pagamento = pd.concat([df_pagamento, new_row]).reset_index(drop=True)
-    df_pagamento.dropna(axis=1)
+    df_pagamento.dropna(axis=1, inplace=True)
+    df_pagamento.index.name = 'id_pagamento'
     df_pagamento.to_csv("armazem/pagamentos.csv")
     return df_pagamento
 

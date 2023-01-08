@@ -1,3 +1,5 @@
-,Unnamed: 0,id_cliente,nome_produto,valor_produto,descricao_produto,data,is_debito_imediato
-0,,0,vassoura,20,varre bem,2023-01-08,False
-1,,0,pá,2,é boa mas tá furada,2023-01-08,False
+id_compra,id_cliente,nome_produto,valor_produto,descricao_produto,data,is_debito_imediato
+0,0,vassoura,20,varre bem,2023-01-08,False
+1,0,pá,2,é boa mas tá furada,2023-01-08,False
+2,1,vassoura,40,varre bem,2023-01-08,False
+3,1,pá,2,é boa mas tá furada,2023-01-08,False

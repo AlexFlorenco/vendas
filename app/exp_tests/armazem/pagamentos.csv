@@ -1,2 +1,3 @@
-,Unnamed: 0,id_cliente,valor,data
-0,,0,15,2023-01-08
+id_pagamento,id_cliente,valor,data
+0,0,15,2023-01-08
+1,1,30,2023-01-08
